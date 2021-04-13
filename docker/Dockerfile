@@ -19,8 +19,8 @@ RUN bash -c '/etc/init.d/mysql start' \
     && mysql -u root -p${MYSQL_ROOT_PASSWORD} < /tmp/setup.sql \
     && rake db:migrate
 
-COPY startup.sh /
+COPY start.sh /
 
-CMD ["bash", "/startup.sh"]
+CMD ["bash", "/start.sh"]
 
 #padrino s -h 0.0.0.0
